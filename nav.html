@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="nav.css">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar fixed-top">
+    <div class="container-fluid">
+      <img id="logo"
+        src="data:image/png;base64,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"
+        alt=""></a>
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#file2">About</a>
+          </li> -->
+
+          <li class="nav-item dropdown ms-auto">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Module
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#file0">Module 0</a></li>
+              <li><a class="dropdown-item" href="#file1">Module 1</a></li>
+              <li><a class="dropdown-item" href="#file2A">Module 2A</a></li>
+              <li><a class="dropdown-item" href="#file2B">Module 2B</a></li>
+              <li><a class="dropdown-item" href="#file3">Module 3</a></li>
+              <li><a class="dropdown-item" href="#file4">Module 4</a></li>
+              <li><a class="dropdown-item" href="#file5A">Module 5A</a></li>
+              <li><a class="dropdown-item" href="#file5B">Module 5B</a></li>
+              <li><a class="dropdown-item" href="#file6A">Module 6A</a></li>
+              <li><a class="dropdown-item" href="#file6B">Module 6B</a></li>
+
+            </ul>
+
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="campuses.html">Our Campuses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="language.html">Our Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://admissions.navgurukul.org/">Admission</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#file10">Follow Us</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- <div class=" Background"> -->
+  <section class="file0" id="file0">
+    <div class="module-margin">
+      <div class="text-margin">
+        <div class="module-color">
+        <h1 >Module 0</h1>
+      </div>
+      </div>
+      <div class="list-margin">
+        <div class="dropdown">
+          <ul>
+            <li>
+              <h6>Long Division</h6>
+            </li>
+            <li>
+              <h6>BODMAS</h6>
+            </li>
+            <li>
+              <h6>Algebra</h6>
+            </li>
+            <li>
+              <h6>Numbers</h6>
+            </li>
+            <li>
+              <h6>HCF/LCM</h6>
+            </li>
+            <li>
+              <h6>Factorization in Algebra</h6>
+            </li>
+            <li>
+              <h6>Quadratic Equation</h6>
+            </li>
+            <li>
+              <h6>Logarithm & Exponentiation</h6>
+            </li>
+          </ul>
+        
+      </div>
+
+
+  </section>
+  <section class="file1" id="file1">
+    <!-- <h1>Module 1</h1> -->
+    <div class="text-margin">
+      <div class="module-color">
+      <h1 >Module 1</h1>
+    </div>
+    </div>
+    <div class="dropdown">
+      <div class="list-margin">
+      <ul>
+        <li>
+          <h4>Number System</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Reference Material</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>History of numbers (video)</h6>
+                    </li>
+                    <li>
+                      <h6>A brief history of numerical systems (video)</h6>
+                    </li>
+                    <li>
+                      <h6>Odometer simulator</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <h5>Self-Learning Resources</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>(Read) Saral Number Systems</h6>
+                    </li>
+                    <li>
+                      <h6>Number systems and bases explained</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h4>Binary numbers and Conversion</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Activity</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>Count on finger activity</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <h5>Reference material</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>Sheet of the first few binary numbers</h6>
+                    </li>
+                    <li>
+                      <h6>Bulb simulator (for binary numbers)</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <h5>Self-Learning Resources</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>Saral Binary Numbers</h6>
+                    </li>
+                    <li>
+                      <h6>Saral Conversion of Binary Numbers</h6>
+                    </li>
+                    <li>
+                      <h6>About Binary</h6>
+                    </li>
+                    <li>
+                      <h6>Why do computers use binary</h6>
+                    </li>
+                    <li>
+                      <h6>Binary Addition</h6>
+                    </li>
+                    <li>
+                      <h6>Binary Conversion</h6>
+                    </li>
+                    <li>
+                      <h6>Conversion of decimal to binary</h6>
+                    </li>
+                    <li>
+                      <h6>1's complement and 2's complement</h6>
+                    </li>
+                    <li>
+                      <h6>Binary Subtraction</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h4>Logic Gates</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Activity</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>Can be done using X's and O's</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <h5>Reference Material</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>Logic Gates Simulator</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <h5>Self-Learning Resources</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>Logic gates</h6>
+                    </li>
+                    <li>
+                      <h6>Implementing all gates using NOR and NAND gates</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h4>Boolean Algebra</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Self-Learning material</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>Boolean Algebra (Part 1)</h6>
+                    </li>
+                    <li>
+                      <h6>Boolean Algebra (Part 2)</h6>
+                    </li>
+                    <li>
+                      <h6>(Video) Boolean Algebra Examples (Part 1)</h6>
+                    </li>
+                    <li>
+                      <h6>(Video) Boolean Algebra Examples (Part 2)</h6>
+                    </li>
+                    <li>
+                      <h6>(Read) Boolean Algebra</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </li>
+    <li>
+      <div class="list-margin">
+      <h1>Practice Questions</h1>
+      <div class="dropdown">
+        <ul>
+          <li>
+            <h6>Writing the binary counting from 1 to 200</h6>
+          </li>
+          <li>
+            <h6>Quiz</h6>
+          </li>
+          <li>
+            <h6>Number System Assignment 1</h6>
+          </li>
+          <li>
+            <h6>Number System Assignment 2</h6>
+          </li>
+          <li>
+            <h6>Number System Assignment 3</h6>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <!-- </div> -->
+  </section>
+  <section class="file2A" id="file2A"></section>
+  <li>
+    <!-- <h1>Module 2A</h1> -->
+    <div class="text-margin">
+      <div class="module-color">
+      <h1 >Module 2A</h1>
+    </div>
+    </div>
+    
+    <div class="dropdown">
+      <div class="list-margin">
+      <ul>
+        <li>
+          <h4>Introduction to Flowcharts</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Self-Learning Resources</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>(Read) Saral Introduction to Flowcharts</h6>
+                    </li>
+                    <li>
+                      <h6>(Read) Saral More about Flowcharts</h6>
+                    </li>
+                    <li>
+                      <h6>(Video) Introduction to flowcharts</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h4>Operators and Conditionals and Dry Runs</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Self-Learning Resources</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>Saral Operators and conditionals</h6>
+                    </li>
+                    <li>
+                      <h6>(Video) Dry run</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h4>Logical Operators and Test Cases</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Self-Learning Resources</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>(Read) Saral Logical Operators and test cases</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h4>Loops</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Self-Learning Resources</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>(Read) Saral Introduction to loops</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h4>Nested loops</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h6>Self-Learning Resources</h6>
+              </li>
+              <li>
+                <h6>(Read) Saral Nested loops</h6>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h4>Arrays</h4>
+          <div class="dropdown2">
+            <ul>
+              <li>
+                <h5>Self-Learning Resources</h5>
+                <div>
+                  <ul>
+                    <li>
+                      <h6>(Read) Introduction of Arrays</h6>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <div class="list-margin">
+  <!-- <li> -->
+    <h1>Additional Resources</h1>
+    <div class="dropdown">
+      <ul>
+        <li>
+          <h6>Reference book</h6>
+        </li>
+      </ul>
+    </div>
+  <!-- </li> -->
+  <!-- <li> -->
+  
+    <h1>Practice Questions</h1>
+    <div class="dropdown">
+      <ul>
+        <li>
+          <h6>Dry-run assignment 1</h6>
+        </li>
+        <li>
+          <h6>Dry-run assignment 2</h6>
+        </li>
+        <li>
+          <h6>Dry-run assignment 3</h6>
+        </li>
+        <li>
+          <h6>Dry-run assignment 4</h6>
+        </li>
+        <li>
+          <h6>Dry-run assignment 5</h6>
+        </li>
+        <li>
+          <h6>Flowchart Problems</h6>
+        </li>
+      </ul>
+    </div>
+  </li>
+</div>
+  </section>
+
+  <section class="file2B" id="file2B">
+    <li>
+      <!-- <h1>Module 2B</h1> -->
+      <div class="text-margin">
+        <div class="module-color">
+        <h1 >Module 2B</h1>
+      </div>
+      </div>
+      <div class="dropdown">
+        <div class="list-margin">
+        <ul>
+          <li>
+            <h4>Computer basics software and Hardware</h4>
+            <div class="dropdown2">
+              <ul>
+                <li>
+                  <h6>Computer Hardware</h6>
+                </li>
+                <li>
+                  <h6>Computer Software and Operating System</h6>
+                </li>
+                <li>
+                  <h6>Video</h6>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h4>What is the Internet and how does the Internet work?</h4>
+            <div class="dropdown2">
+              <ul>
+                <li>
+                  <h6>Videos</h6>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h4>UI(User Interface) development</h4>
+            <div class="dropdown2">
+              <ul>
+                <li>
+                  <h6>What is UI development</h6>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h4>Code editors (Vs code)</h4>
+            <div class="dropdown2">
+              <ul>
+                <li>
+                  <h6>What are code editors</h6>
+                </li>
+                <li>
+                  <h6>How to use VS code</h6>
+                </li>
+                <li>
+                  <h6>How to install VS code in Ubuntu</h6>
+                </li>
+                <li>
+                  <h6>How to install VS code in Windows</h6>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h4>Installing required extensions for HTML and CSS and writing your
+              first code</h4>
+            <div class="dropdown2">
+              <ul>
+                <li>
+                  <h6>Creating folder, files and installing extensions</h6>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h4>HTML</h4>
+            <div class="dropdown2">
+              <ul>
+                <li>
+                  <h5>Videos</h5>
+                  <div>
+                    <ul>
+                      <li>HTML Introduction</li>
+                      <li>Basic HTML Tags</li>
+                      <li>Lists:Nested list</li>
+                      <li>Tables</li>
+                      <li>Forms</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>Course on freecodecamp.org (mandatory)</li>
+              </ul>
+            </div>
+          </li>
+          <li>CSS
+            <div class="dropdown2">
+              <ul>
+                <li>Videos
+                  <div>
+                    <ul>
+                      <li>CSS Introduction</li>
+                      <li>Precedence of including styling</li>
+                      <li>CSS Selectors</li>
+                      <li>Length Units & Colour</li>
+                      <li>Basic CSS Properties</li>
+                      <li>Box Model</li>
+                      <li>Inspect Element</li>
+                      <li>Display</li>
+                      <li>Positioning</li>
+                      <li>Grid Layouts - Structuring a Webpage</li>
+                      <li>Flexbox</li>
+                      <li>Media Queries</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>Course on freecodecamp.org (mandatory)
+                  <div>
+                    <ul>
+                      <li>Basic CSS Design</li>
+                      <li>CSS Flexbox</li>
+                      <li>CSS Grid</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>Bootstrap
+                  <div>
+                    <ul>
+                      <li>Reading</li>
+                      <li>Video</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>Tasks & projects
+            <div class="dropdown2">
+              <ul>
+                <li>Complete all the tasks and projects</li>
+              </ul>
+            </div>
+          </li>
+          <li>Coding practice
+            <div class="dropdown2">
+              <ul>
+                <li>HTML tables coding practice</li>
+                <li>HTML Forms coding practice</li>
+                <li>Todo List Coding practice</li>
+                <li>Mobile specification page</li>
+                <li>Chat page</li>
+                <li>Coding Cover page</li>
+                <li>Food Ordering page</li>
+                <li>Cricketer page</li>
+                <li>Advanced Technologies</li>
+                <li>News Page</li>
+                <li>Hotel booking page</li>
+                <li>Podcast page</li>
+                <li>Goa page</li>
+                <li>Movie page</li>
+                <li>Quiz Question page</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </li>
+
+  </section>
+  <section class="file3" id="file3">
+    <li>
+      <!-- <h1>Module 3</h1> -->
+      <div class="text-margin">
+        <div class="module-color">
+        <h1 >Module 3</h1>
+      </div>
+      </div>
+      <div class="dropdown">
+        <div class="list-margin">
+        <ul>
+          <li>Getting started
+            <div class="dropdown2">
+              <ul>
+                <li>Introduction to Programming
+                  <div>
+                    <ul>
+                      <li>Understanding Computers
+                        <div>
+                          <ul>
+                            <li>What is a computer?</li>
+                            <li>Binary: the language of computer</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>What is programming/coding?</li>
+                      <li>Why learn to code?</li>
+                      <li>What are programming languages?</li>
+                      <li>How does the computer understand our code?
+                        <div>
+                          <ul>
+                            <li>Compiler and interpreter, just the basic understanding</li>
+                            <li>Is JavaScript compiled or interpreted?</li>
+                            <li>What is the chrome V8 engine?</li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>Javascript
+                  <div>
+                    <ul>
+                      <li>Why Javascript?</li>
+                      <li>Write your first JS program right now!
+                        <div>
+                          <ul>
+                            <li>Press f12 to open developer tools</li>
+                            <li>Go to the console tab and type in the following
+                              <div>
+                                <ul>
+                                  <li>alert("Hi " + prompt("What's your name?"))</li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>Hit enter and see what happens!</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>NodeJS: How to run JS outside the browser?
+                        <div>
+                          <ul>
+                            <li>Why not just use the browser?
+                              <div>
+                                <ul>
+                                  <li>JS as a client-side-scripting language</li>
+                                  <li>Browser vs Node</li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>What is Node and npm?
+                              <div>
+                                <ul>
+                                  <li>Node.js Introduction (w3Schools)</li>
+                                  <li>The complete beginner's guide</li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>Setting up Node.js and npm
+                              <div>
+                                <ul>
+                                  <li>Installing Node & npm on Ubuntu</li>
+                                  <li>Installing readline-sync package for taking input from the
+                                    user</li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>Creating and executing javascript files on VSCode</li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>Fundamentals
+            <div class="dropdown2">
+              <ul>
+                <li>Variables and Data Types</li>
+                <li>Input Output</li>
+                <li>Operators</li>
+                <li>Conditional Statements</li>
+                <li>Loops</li>
+                <li>Arrays</li>
+              </ul>
+            </div>
+          </li>
+          <li>Write the code for all flowcharts problem in js</li>
+        </ul>
+      </div>
+    </li>
+  </section>
+  <section class="file4" id="file4"></section>
+  <li>
+    <!-- <h1>Module 4</h1> -->
+    <div class="text-margin">
+      <div class="module-color">
+      <h1 >Module 4</h1>
+    </div>
+    </div>
+    <div class="dropdown">
+      <div class="list-margin">
+      <ul>
+        <li>Variables
+          <div class="dropdown2">
+            <ul>
+              <li>Key concepts
+                <div>
+                  <ul>
+                    <li>var, let, and const</li>
+                    <li>Identifiers, naming conventions</li>
+                    <li>Declaration & assignment</li>
+                    <li>Resources
+                      <div>
+                        <ul>
+                          <li>JavaScript Variables</li>
+                          <li>Variables</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>Practice exercise</li>
+              <li>Additional information
+                <div>
+                  <ul>
+                    <li>let</li>
+                    <li>const</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>Data types
+          <div class="dropdown2">
+            <ul>
+              <li>JavaScript Data types
+                <div>
+                  <ul>
+                    <li>List of data types</li>
+                    <li>What are dynamic types?</li>
+                    <li>Expressions evaluation (left to right)</li>
+                    <li>Numbers, Boolean, String, Arrays, undefined</li>
+                    <li>typeof operator</li>
+                    <li>Resources
+                      <div>
+                        <ul>
+                          <li>Data types tutorial</li>
+                          <li>Data types in Javascript
+                            <div>
+                              <ul>
+                                <li>Part-1</li>
+                                <li>Part-2</li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>Type Conversion and Coercion
+                <div>
+                  <ul>
+                    <li>Type Conversion or Explicit Conversion</li>
+                    <li>Type Coercion or Implicit Coercion</li>
+                    <li>Resources
+                      <div>
+                        <ul>
+                          <li>Explained in-depth</li>
+                          <li>Type Conversion & Coercion</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>Practice exercise</li>
+            </ul>
+          </div>
+        </li>
+        <li>Operators
+          <div>
+            <ul>
+              <li>Introduction
+                <div>
+                  <ul>
+                    <li>Types of operators</li>
+                    <li>Operators on Strings
+                      <div>
+                        <ul>
+                          <li>Concatenation</li>
+                          <li>Comparison</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>Resources
+                      <div>
+                        <ul>
+                          <li>JavaScript Operators</li>
+                          <li>Operators</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>Arithmetic Operators
+                <div>
+                  <ul>
+                    <li>Operators and operands</li>
+                    <li>Increment and decrement operators</li>
+                    <li>Exponentiation</li>
+                    <li>Operator precedence</li>
+                    <li>Resources
+                      <div>
+                        <ul>
+                          <li>JavaScript Arithmetic</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>Assignment Operators</li>
+              <li>Comparison and Logical Operators</li>
+              <li>Loose Equality vs Strict Equality</li>
+              <li>Practice exercise</li>
+              <li>Solve Assignment #1</li>
+            </ul>
+          </div>
+        </li>
+        <li>Switch Case</li>
+        <li>Loops</li>
+        <li>Scope</li>
+        <li>Functions</li>
+        <li>Objects</li>
+        <li>Arrays</li>
+        <li>Strings</li>
+        <li>Date Object</li>
+        <li>Math Object</li>
+        <li>Practice Questions</li>
+      </ul>
+    </div>
+  </li>
+</div>
+  </section>
+
+  <section class="file5A" id="file5A">
+    <li>
+      <!-- <h1>Module 5A</h1> -->
+      <div class="text-margin">
+        <div class="module-color">
+        <h1 >Module 5A</h1>
+      </div>
+      </div>
+      <div class="dropdown">
+        <div class="list-margin">
+        <ul>
+          <li>Dynamic web application</li>
+          <li>DOM and Event fundamentals</li>
+        </ul>
+      </div>
+    </li>
+  </div>
+  </section>
+  <section class="file5B" id="file5B"></section>
+  <li>
+    <!-- <h1>Module 5B</h1> -->
+    <div class="text-margin">
+      <div class="module-color">
+      <h1 >Module 5B</h1>
+    </div>
+    </div>
+    <div class="dropdown">
+      <div class="list-margin">
+      <ul>
+        <li>Introduction</li>
+        <li>Understanding Frontend Web Development</li>
+        <li>Introduction to Backend Web Development</li>
+        <li>Understanding Frameworks and Libraries in Technology</li>
+        <li>Introduction to Database Management Systems</li>
+        <li>Understanding HTTP - The Foundation of Web Communication</li>
+        <li>Understanding DNS</li>
+        <li>Understanding Caching Explained Simply</li>
+        <li>Understanding Firewalls</li>
+        <li>What is a Proxy Server?</li>
+        <li>Understanding Cookies in Web Browsing</li>
+        <li>Cookies vs Local Storage vs Session Storage</li>
+      </ul>
+    </div>
+  </li>
+</div>
+  </section>
+  <section class="file6A" id="file6A"></section>
+  <li>
+    <!-- <h1>Module 6A</h1> -->
+    <div class="text-margin">
+      <div class="module-color">
+      <h1 >Module 6A</h1>
+    </div>
+    </div>
+    <div class="dropdown">
+      <div class="list-margin">
+      <ul>
+        <li><a
+            href="https://docs.google.com/document/d/1U_ppRNxd2ZaOpOgejRYu8t1Pi0D0PaZdoX4t_Gqke3M/edit#heading=h.7x25v26j5evj">Variable
+            Declaration Features and Best Practices</a>
+          <div>
+            <ul>
+              <li>Using let for Variables</li>
+              <li>Declaring Constants with const</li>
+              <li>No Redeclaring with let</li>
+              <li>Constants vs. let Declarations</li>
+              <li>Temporal Dead Zone (TDZ)</li>
+              <li>Block Bindings in Loops</li>
+              <li>const Declarations in Loops</li>
+              <li>Global Block Bindings</li>
+              <li>Emerging Best Practices</li>
+              <li>Practice Exercises</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/1t8CkBgF4dLEGxWaA1fBROzBOD0gQX4PBqF4m4GF4XsA/edit#heading=h.rnaad1fd99gv">Detailed
+            Overview of ES6 Function Enhancements</a>
+          <div>
+            <ul>
+              <li>Default Parameter Values</li>
+              <li>Rest Parameters</li>
+              <li>Spread Operator</li>
+              <li>new.target Metaproperty</li>
+              <li>Block-Level Functions</li>
+              <li>Arrow Functions</li>
+              <li>Additional ES6 Function Features</li>
+              <li>Best Practices and Notes</li>
+              <li>Practice Exercises</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/1K65KqEHp0-Q5GiGODEPh7fmmnhhuPvE97z8QxmP63uQ/edit#heading=h.n7mr5wcsnm2d">ES6
+            Enhancements for Objects</a>
+          <div>
+            <ul>
+              <li>Object Literal Syntax Extensions</li>
+              <li>New Object Methods</li>
+              <li>Duplicate Object Literal Properties</li>
+              <li>Own Property Enumeration Order</li>
+              <li>Prototype Enhancements</li>
+              <li>Notes on Object Enhancements in ES6</li>
+              <li>Exercises</li>
+            </ul>
+          </div>
+        </li>
+        <li></li>
+        <li><a
+            href="https://docs.google.com/document/d/1kcaJwqn5CQr0NilB6SXbAl1ly5p7IlB9NOS0qwSZLkY/edit#heading=h.39yo5kpkinp9">Detailed
+            Overview of ES6 Symbols</a>
+          <div>
+            <ul>
+              <li>Introduction to Symbols</li>
+              <li>Creating and Using Symbols</li>
+              <li>Uniqueness and Privacy</li>
+              <li>Global Symbol Registry</li>
+              <li>Retrieving Symbols</li>
+              <li>Well-Known Symbols</li>
+              <li>Symbol Coercion</li>
+              <li>Advanced Symbol Usage</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/1owrNWVqhHpkY7iom1PPs7hXMTCv9a3ivct--5--batU/edit#heading=h.911a1mes8s0g">ES6
+            Features: Sets, Maps, Weak Sets, and Weak Maps</a>
+          <div>
+            <ul>
+              <li>ES6 Sets</li>
+              <li>ES6 Maps</li>
+              <li>ES6 Weak Sets</li>
+              <li>ES6 Weak Maps</li>
+              <li>Usage Notes</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/1NhRzYA5wVi9dI3XV5WXLPJIdoIXxfYwkzupCheZaNHQ/edit#heading=h.pu0jz7o6wo1a">ES6
+            Features: Iterators, Generators, and Asynchronous Task Running</a>
+          <div>
+            <ul>
+              <li>Iterators in ES6</li>
+              <li>Generators in ES6</li>
+              <li>Using Generators for Iteration</li>
+              <li>Generator Function Expressions</li>
+              <li>Iterables and for-of Loops</li>
+              <li>Creating Iterables</li>
+              <li>Built-In Iterators for Collections</li>
+              <li>Advanced Iterator Functionality</li>
+              <li>Asynchronous Task Running with Generators</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/1RD-sKBBT0fMvtrinGpXyB29FfgtXp-pmnL4XElczHN4/edit#heading=h.okevz1733rzx">ES6
+            Features: Classes</a>
+          <div>
+            <ul>
+              <li>ES6 Class Declarations</li>
+              <li>Accessor Properties in Classes</li>
+              <li>Computed Member Names</li>
+              <li>Generator Methods</li>
+              <li>Static Members</li>
+              <li>Inherited Static Members</li>
+              <li>Derived Classes from Expressions</li>
+              <li>Inheriting from Built-Ins</li>
+              <li>Using new.target in Class Constructors</li>
+              <li>Exercises</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/1Y6FNi2wOJGmjZ3bXx_p9aKdz7QxtLULn8hE16otQvLU/edit#heading=h.hi63wegr678w">ES6
+            Features: Enhanced Array Capabilities</a>
+          <div>
+            <ul>
+              <li>Creating Arrays in ES6</li>
+              <li>New Methods on All Arrays</li>
+              <li>Typed Arrays</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/14xvehhsWxw2j5MdxXPZNqQARDWvQu1MpBY6IoE7LiZQ/edit#heading=h.vyf1z42nyqs5">ES6
+            Features: Promises for Asynchronous Programming</a>
+          <div>
+            <ul>
+              <li>Background of Asynchronous Programming in JavaScript</li>
+              <li>Introduction to Promises</li>
+              <li>Global Promise Rejection Handling</li>
+              <li>Chaining Promises</li>
+              <li>Inheriting from Promises</li>
+              <li>Running Asynchronous Tasks with Generators</li>
+              <li>Future of Asynchronous Task Running</li>
+              <li>Exercises</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/1MacBqbkthtU0UV0tYnZpiwHMWJxf71fjxnn244lyr30/edit#heading=h.lhen5lb5kj2t">ES6
+            Features: JavaScript Modules</a>
+          <div>
+            <ul>
+              <li>Overview of Modules</li>
+              <li>Basic Exporting</li>
+              <li>Basic Importing</li>
+              <li>Renaming Exports and Imports</li>
+              <li>Default Values in Modules</li>
+              <li>Re-exporting a Binding</li>
+              <li>Module Specifier Resolution in Browsers</li>
+              <li>Module Loading in Browsers</li>
+              <li>Exercises</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+</div>
+  </section>
+  <li>
+    <section class="file6B" id="file6B">
+    <!-- <h1>Module 6B</h1> -->
+    <div class="text-margin">
+      <div class="module-color">
+      <h1 >Module 6B</h1>
+    </div>
+    </div>
+    <div class="dropdown">
+    <div class="list-margin">
+      <ul>
+        <li><a
+            href="https://docs.google.com/document/d/1xid-Qhb4B0wqfGV5GpchK_ojdgSNyTvo70H6E4IAO4U/edit#heading=h.yv4tqxjbyd9b">Database
+            Management System</a>
+          <div>
+            <ul>
+              <li>Preface</li>
+              <li>Introduction</li>
+              <li>Purpose of DBMS</li>
+              <li>Relational Database Model</li>
+              <li>Relational Data Model Terminology</li>
+            </ul>
+          </div>
+        </li>
+        <li><a
+            href="https://docs.google.com/document/d/1jQ4f36D3SIyp72Jcv58r6vlLvgVuWoDrZGE_zwDpw6Q/edit#heading=h.tg8wwcithlr5">Getting
+            Started with MySQL</a>
+          <div>
+            <ul>
+              <li>Installation Guide</li>
+              <li>Connecting to and Disconnecting from the Server</li>
+              <li>Running Queries</li>
+              <li>Creating and Selecting a Database</li>
+              <li>Creating a Table</li>
+              <li>Data Types in MySQL</li>
+              <li>Loading Data into a Table</li>
+              <li>Download MySQL Sample Database</li>
+              <li>Retrieving Data from a Table
+                <div>
+                  <ul>
+                    <li>The SELECT FROM statement</li>
+                    <li>Order By Clause</li>
+                    <li>WHERE Clause</li>
+                    <li>DISTINCT clause</li>
+                    <li>AND operator</li>
+                    <li>OR operator</li>
+                    <li>IN operator</li>
+                    <li>NOT IN operator</li>
+                    <li>BETWEEN Operator</li>
+                    <li>LIKE operator</li>
+                    <li>LIMIT clause</li>
+                    <li>IS NULL operator</li>
+                    <li>Aliases</li>
+                  </ul>
+                </div>
+              </li>
+              <li>MySQL Joins</li>
+              <li>GROUP BY clause</li>
+              <li>HAVING Clause</li>
+              <li>MANAGING TABLES</li>
+              <li>MYSQL CONSTRAINTS</li>
+              <li>UPDATE DATA</li>
+              <li>DELETE DATA</li>
+              <li>MYSQL Aggregate Functions</li>
+              <li><a
+                  href="https://docs.google.com/document/d/1cW8xfzv2b8DuIfZ6hrwCVQrSHpaTi5xnjzTDgCLfFKg/edit#heading=h.kkclkr0l57i">Practice
+                  Questions</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+  </ul>
+</div>
+<!-- </div> -->
+</section>
+
+
+
+
+
+
+
+<section class="file10" id="file10">
+  <div class="footer-container">
+    <div class="navgurukul-logo">
+      <img
+        src="data:image/png;base64,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"
+        alt="">
+    </div>
+
+    <div class="container inner-container">
+      <div class="row">
+        <div class="col-sm-12 col-12 col-md-3 col-lg-3">
+          <h5>About</h5>
+          <div>Our Story</div>
+          <div>Team</div>
+          <div>Blog</div>
+        </div>
+        <div class="col-sm-12 col-12 col-md-3 col-lg-3">
+          <h5>Our Initiatives</h5>
+          <div>Guaranteed Job Courses
+
+
+          </div>
+          <div>Meraki</div>
+          <div>Code India Fellowships</div>
+          <div>NG Labs</div>
+        </div>
+        <div class="col-sm-12 col-12 col-md-3 col-lg-3">
+          <h5>Get Involved</h5>
+
+          <div>Be a Partner</div>
+          <div>Donate</div>
+          <div>Careers
+          </div>
+          <div>Volunteer</div>
+        </div>
+        <div class="col-sm-12 col-12 col-md-3 col-lg-3">
+          <h5>Learn Online</h5>
+
+          <div><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAAAMCAYAAAANvcHWAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUeSURBVHgB1VdNduJGEK5uCcysTE4Q+Qb4BIHEYJjN2Ou8F9AJsE9gfALjE8g4L2vbmwz+SVBOEOYEkBOEXYhtdeWrFgLxI7/EmSSTek8gqau6quvnq5La71XbSlGp/829TxnUCGoH7HB7Gj0dhn44oX+YEn1RRMf3/v1wE0/9sjpQTMVnQ77w1IOyx07+zER8miXzX5NWREfE1GoE+0dZTKz5DDzlAukD+heIiQ9En0NRKZOHucREJUXKi9+4LcV84Chq0ydKenFnTspBubjKUA+qLfx59ImRMu6uNrR7599d0/+E3OQGWVIsaFeyu5O8k9JEOE6yhCU4byhfjuUfh30/HKfXCuSW+v5DmPCleapBteTEmTlZlc0ikUkgYkrTCfb36BVkz0W5Mqwei32UcS5UWHETT2z700RslnuXlPceQZd9I8oVE1hb1bHIbFJjHLy9lN063ySb1Wq8apBg/ZZ2R4CYK7lI50b1b2vzwBQo1wVIDeq9WnPOR/muGFHvVUeOpp+hPdgku4kal7UzkWkEexbutnRuIPu//e7Lz+kvUP1yPxB9oju2rzoShy307F0VdO7X2K4FT+KXelD3xA45i/Dae/DKHqxz9llsXdUh8gtnGz5NZfcs+tyyjjamlzb4LTYG1ncV6QnkKlLOeN3Dface7JWXj8cXSPuQDR87xB2JNmRF7lRk5UIGyXNnE4wlDgJGH4ktTK6FDexhec2j3qE/SdYJbFo45zmZp53YbkVw0JWsi35jyJN1Y8yh2KaMOceSl/glIaX5HbOWvnGujDqUbE5sYqYDkbd7xInqvUFPmcNI37+/QIdvKrbZ3SUndwIneXB0RexIKzIOmhC0wLDju1mJIOId0lGTtZImGi58TRe3rYf0pCMwcJHeD33hBlnQFNhZkp05WhwUB11X+n5/TK8kg31QvXTbvJ87rhF8dcNat1MQtbts2578tdno9WYNe2432WOMf+f/EM72L8v+ksjuEhPGJjhrUHByMn20kE3Xt3DmerbGDVNpEwAmzmYa7C/Gse0lTo5+Sj9aLHfzCBaXiZXdh8kUxQlrpB0E3HhSCb+Zx92/M3ZK+eOAMRT0aqPkvbG6Jb+tLUN7Vkc1YVt5Ic2kHLO9suU4K/A6b0YpybnNS84WIEd2h+JoeVbsHm/aTMpenIMSw/pzmF6bCkS8QDaQhm0ps4nONUVDclwJ7tpYqZS6lpKEPs8GiOiUXklxQ81JSCdsHitzHbP/OzS7eCBQAzh6bEx0bG2TJifY+xFIr71BdsufOCMrciqiD/bGcb6QjpxciJ1XmOHWC+TZ/Y0KUWrXEhxA18Z5mqPnD1KqMYSgH1xWX31oqQqcacjWPtdLbI6TI1eO+0U83YBnIrbJOmvapo9E7uqL2aj22UslO6XnboEwqTC3Gj10YQUctmXHaC45aSiZH0gqYmCkKmt8KMF57wA7JQBQUWXwS8ABARV8BwxEH2Q8fO1WKFMBtdD9Wytvx1PztKvQpG3myoQgFYz3gEqpqGLBuHD883CLXFQtlfYva1caIMMbKu61pAEFN4LN6ZfrjrYdFVc+nK/bjKOegTXytYdUlew7/d08deIz8zAtk9B7/6FrJx/GBCJyhnva2GoCrztOZLE+TGTF4VNgNivYyWx7gNiN+1AcZA9CStbCTZeye8WJhO6+o+S80vyhX2NSkqlD1uRc8rE0kymxoaJMLNYWJqtX4EieceobWqHEpu+//vGXtDuFH5Pb8A8y9wiUIbENWwAAAABJRU5ErkJggg=="
+              alt=""></div>
+          <div>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAYCAYAAAAYl8YPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgBrZJbSBRRGMf/39z2YrultdSSRpb1UFJU9NRDPQQRBEFvURBBEAQRBkV3IizKCrpq9NCVogsVhSVYkN0MMrMiM9eHVUMUDC+76l5mzpzO6qw7blkq/oc/HGbO/L7v/52DFcHDzmVvT3gwDqKp1ZV3yVO61KmqN929dPR7/uE4xiiS3vGYmvGMlEkVqkNTf2TIrh0/px4sxxhEeM85GKBOvseQ+VGGTHyC5r7lU5U9AfeBltHBPgzAEpZ8pQaf8kbhMqBAinjhKl7AvYUVmQVdI4NVp2DgOof/gY7MGi25wUlqg19yHwh69t/7P6xGwEwLlnTODYaJtXJqE5AJ9yOXpO1p8e4LDA/7auss4QQYfQwzrjNkNGr2zRqUUIbkKHSGp11snb61Lx0miQeQLSv9b0Rct4zGLSp6Z0ftm+MwvJ1mb1Ges7IuFJy5SbRBf8KSQMkCJtakEpo3quiZxew/5LIudrvjYbbHaLqGZu9z3pQ3PxWzzpoZtyKyNJOInHuZw9mq5LJu9rr9NmUjLA0WVVQdDm8RfDmnCPUWLAlMzs2wwcUMs2adYK86ipV889cAyG5ZpFUcZamYdtvnJ9b+7ih9KqhFfmOE9xfk6aMXZ8iiXUNnRtaaUsDJkRB7fOWQntMY0vilhYQuh5nGCcUNnAxHsI0QtMVMszsa4y+KdulLmuo1SRSQJHF8vgijvVUEX4wY4aFp4qg2BzUDp0l/iSnsMmK89PT+2KJggwZOECUhfgRvd8nm+QVt8TjWyRI2JkGwJpO8JIPKCofY1XNFbGmgzmkSDX42OdrjYCUdQeV4zjxEkCbFuiCDQGcsxksunjGWf/3s4AJkDchgHOVhI77b/+VlLYaRNPQOA8Vnz+orq6scXEQTncAw8S3GjLVVnujaf4EGOiOrM9HCqQsl8TXvKjVOEhiZfZzhuKHwS/6a5+0YgfpjJqIdKbmqbygr1xjxqA6zrJP1bMv/XtGGUSjRmbHz5n1z/dNyTSd8MhkVzgyUPsIYJG/OXjy34NqdiSY3j0WJb88LPPmCsepZ3mpHZfaqLIyDfgMeD2nBtfuuGQAAAABJRU5ErkJggg=="
+              alt="">
+            Now on Playstore
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <hr>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-sm-12 col-12 col-md-4 col-lg-4">
+          Legal & Privacy Policy<span style="margin-left: 50px;"> Hire From NG </span>
+
+        </div>
+        <div class="col">
+          © 2022 Navgurukul
+
+        </div>
+        <div class="col-sm-12 col-12 col-md-4 col-lg-4">
+          <div class="d-flex flex-row justify-content-center">
+            <div class="follow-us-icon-container">
+              <i class="fab fa-twitter icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-twitter"
+                  viewBox="0 0 30 30">
+                  <path
+                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15" />
+                </svg>
+              </i>
+            </div>
+            <div class="follow-us-icon-container">
+              <i class="fab fa-instagram icon"><i class="fab fa-instagram icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor"
+                    class="bi bi-instagram" viewBox="0 0 30 30">
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                  </svg>
+                </i></i>
+            </div>
+            <div class="follow-us-icon-container">
+              <i class="fab fa-facebook icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor"
+                  class="bi bi-facebook" viewBox="0 0 30 30">
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg>
+              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-center footer-bold">
+      Registered as Navgurukul Foundation for Social Welfare
+
+
+    </div>
+    <div class="footer-center">
+      CIN Number: U85300HR2016NPL066468
+    </div>
+    <div class="footer-center">Let's talk at <span style="color: orangered;">hi@navgurukul.org </span></div>
+    <div class="bottom-margin">
+
+    </div>
+    
+
+
+  </div>
+  </div>
+</section>
+
+
+
+</body>
+
+</html>
